@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Variable: PCE Credentials
 RAW_URL=$(terraform output -raw tf_pce_url)
 PCE_URL=${RAW_URL#https://}
