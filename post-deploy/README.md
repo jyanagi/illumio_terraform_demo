@@ -1,0 +1,1 @@
+This script modifies the Ubuntu EC2 Instance within your AWS Environment and installs the latest Illumio Kubelink operator. The Illumio Values file is generated during the first step and then uploaded in this process.
