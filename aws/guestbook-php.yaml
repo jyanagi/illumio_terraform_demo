@@ -22,7 +22,10 @@ spec:
   template:
     metadata:
       annotations:
-        com.illumio.role: redis-follower
+        com.illumio.role: TF-Redis Follower
+        com.illumio.app: TF-Guestbook
+        com.illumio.env: TF-Production
+        com.illumio.loc: TF-Demo
       labels:
         app: redis
         role: follower
@@ -44,7 +47,10 @@ metadata:
   name: redis-follower
   namespace: guestbook
   annotations:
-    com.illumio.role: redis-follower
+    com.illumio.role: TF-Redis Follower
+    com.illumio.app: TF-Guestbook
+    com.illumio.env: TF-Production
+    com.illumio.loc: TF-Demo
   labels:
     app: redis
     role: follower
@@ -75,7 +81,10 @@ spec:
   template:
     metadata:
       annotations:
-        com.illumio.role: redis-leader
+        com.illumio.role: TF-Redis Leader
+        com.illumio.app: TF-Guestbook
+        com.illumio.env: TF-Production
+        com.illumio.loc: TF-Demo
       labels:
         app: redis
         role: leader
@@ -97,7 +106,10 @@ metadata:
   name: redis-leader
   namespace: guestbook
   annotations:
-    com.illumio.role: redis-leader
+    com.illumio.role: TF-Redis Leader
+    com.illumio.app: TF-Guestbook
+    com.illumio.env: TF-Production
+    com.illumio.loc: TF-Demo
   labels:
     app: redis
     role: leader
@@ -125,7 +137,10 @@ spec:
   template:
     metadata:
       annotations:
-        com.illumio.role: frontend
+        com.illumio.role: TF-Frontend
+        com.illumio.app: TF-Guestbook
+        com.illumio.env: TF-Production
+        com.illumio.loc: TF-Demo
       labels:
         app: guestbook
         tier: frontend
@@ -149,7 +164,10 @@ metadata:
   name: frontend
   namespace: guestbook
   annotations:
-    com.illumio.role: frontend
+    com.illumio.role: TF-Frontend
+    com.illumio.app: TF-Guestbook
+    com.illumio.env: TF-Production
+    com.illumio.loc: TF-Demo
   labels:
     app: guestbook
     tier: frontend
