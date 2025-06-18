@@ -20,13 +20,6 @@ PCE_PP_KEY=$(curl -s -k -X POST https://$PCE_URL/api/v2$PCE_PP_HREF/pairing_key 
 CC_ID=$(terraform output -raw tf_k3s_cc_id)
 CC_TOKEN=$(terraform output -raw tf_k3s_cc_token)
 
-# Variable: K8s Application Namespace and Container Cluster HREF to build Container Workload Profile
-NAMESPACE="guestbook"
-CC_HREF=$(curl -sX GET "https://$PCE_URL/api/v2/orgs/$PCE_ORG_ID/container_clusters/$CC_ID/container_workload_profiles" \
-  -u "$PCE_API_KEY":"$PCE_API_SECRET" \
-  -H 'Accept: application/json' \
-  | jq -r --arg NAMESPACE "$NAMESPACE" '.[] | select(.namespace == $NAMESPACE) | .href')
-
 # Pull Current Firewall Coexistence Scopes and Append New Scopes Using TF HREFs
 UPDATED_PAYLOAD=$(curl -sX GET "https://$PCE_URL/api/v2/orgs/$PCE_ORG_ID/sec_policy/draft/firewall_settings" \
   -u "$PCE_API_KEY:$PCE_API_SECRET" \
