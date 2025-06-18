@@ -3,6 +3,8 @@ private_key_path = "~/.ssh/id_rsa"
 public_key_path  = "~/.ssh/id_rsa.pub"
 ami_user         = "ubuntu"
 aws_region       = "us-east-1"
+ami_id           = "ami-053b0d53c279acc90" # Ubuntu 22.04
+instance_type    = "t3.small"
 
 # Illumio Variables
 pce_url          = "https://your.pce.fqdn:8443"
