@@ -1,12 +1,6 @@
-This repository uses Terraform and REST API to provision security objects and policies to protect a Kubernetes container cluster with Illumio's Breach Containment Platform.
+This repository uses Terraform provision security objects and policies to protect a Kubernetes container cluster with Illumio's Breach Containment Platform.
 
-To use the terraform provider, issue the following commands:
-
-```
-terraform init
-terraform apply --auto-approve
-```
-----------
+# Objects Created...
 The Terraform files use [Illumio's Terraform Provider](https://registry.terraform.io/providers/illumio/illumio-core/latest/docs), and configures the following resources:
 
 | Labels               | Services       | IP Lists                     |
@@ -21,7 +15,7 @@ The Terraform files use [Illumio's Terraform Provider](https://registry.terrafor
 | R: TF-Redis Leader   | TF-Kube etcd   |                              | 
 |                      | TF-Redis       |                              | 
 
-----------
+# Security Policies 
 
 The following **Security Rules** and **Security Rulesets** are created:
 
@@ -71,7 +65,7 @@ Extra-Scope Rule
 |--------|-------------|---------------------|
 | TF-k8s Node | TF-Frontend | TF-HTTP(S) |
 
-----------
+# Other Resources Created...
 
 A **Pairing Profile** is created titled 'TF-K8s Pairing Profile' with a **Container Cluster** titled 'TF-K3s Container Cluster'
 
