@@ -62,7 +62,28 @@ containerManager: kubernetes # supported values: [kubernetes, openshift]
 networkType: overlay  # CNI type, allowed values are [overlay, flat]
 #clusterMode: clas
 ignore_cert: true
+
+# Remove 'COMMENT_PRIVATE_PKI' multi-line comment if implementing private PKI certificates
+# Note: configmap must be created first
+: <<'COMMENT_PRIVATE_PKI'
+extraVolumes:
+  - name: private-ca
+    configMap:
+      name: private-ca
+extraVolumeMounts:
+  - name: private-ca
+    mountPath: /etc/pki/tls/ilo_certs/
+    readOnly: false
+
+storage:
+  registry: "docker.io/bitnami"
+  repo: "etcd"
+  imageTag: "3.5.7"
+  imagePullPolicy: "IfNotPresent"
+  sizeGi: 1
+COMMENT_PRIVATE_PKI
 EOF
+
 
 
 
