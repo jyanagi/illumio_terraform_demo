@@ -63,9 +63,10 @@ networkType: overlay  # CNI type, allowed values are [overlay, flat]
 #clusterMode: clas
 ignore_cert: true
 
-# Remove 'COMMENT_PRIVATE_PKI' multi-line comment if implementing private PKI certificates
+# The following section supports private PKI environments
+# Remove if this is not a requirement
 # Note: configmap must be created first
-: <<'COMMENT_PRIVATE_PKI'
+
 extraVolumes:
   - name: private-ca
     configMap:
@@ -81,7 +82,6 @@ storage:
   imageTag: "3.5.7"
   imagePullPolicy: "IfNotPresent"
   sizeGi: 1
-COMMENT_PRIVATE_PKI
 EOF
 
 
