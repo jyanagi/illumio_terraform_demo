@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Enable Logging - refer to /var/log/user-data.log for k3s installation messages
-exec >> /var/log/user-data.log 2>&1
+exec > /var/log/helm-install.log 2>&1
 set -x
 
 # Download and install Helm
