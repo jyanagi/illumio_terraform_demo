@@ -97,6 +97,20 @@ resource "aws_instance" "k3s_node" {
     }
   }
 
+  # Upload private-ca.crt to /tmp directory
+  # Only required if using Private PKI
+  provisioner "file" {
+    source      = "private-ca.crt"
+    destination = "/tmp/private-ca.crt"
+
+    connection {
+      type        = "ssh"
+      user        = var.ami_user
+      private_key = file(var.private_key_path)
+      host        = self.public_ip
+    }
+  }
+
   # Execute k3s_install script as root 
   provisioner "remote-exec" {
     inline = [
