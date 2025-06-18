@@ -97,6 +97,19 @@ resource "aws_instance" "k3s_node" {
     }
   }
 
+  # Upload post-deploy script to /tmp directory
+  provisioner "file" {
+    source      = "post-deploy.sh"
+    destination = "/tmp/post-deploy.sh"
+
+    connection {
+      type        = "ssh"
+      user        = var.ami_user
+      private_key = file(var.private_key_path)
+      host        = self.public_ip
+    }
+  }
+
   # Execute k3s_install script as root 
   provisioner "remote-exec" {
     inline = [
@@ -117,6 +130,21 @@ resource "aws_instance" "k3s_node" {
     inline = [
       "chmod +x /tmp/helm_install.sh",
       "sudo /tmp/helm_install.sh"
+    ]
+
+    connection {
+      type        = "ssh"
+      user        = var.ami_user
+      private_key = file(var.private_key_path)
+      host        = self.public_ip
+    }
+  }
+
+  # Execute post-deploy script as root 
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/post-deploy.sh",
+      "sudo /tmp/post-deploy.sh"
     ]
 
     connection {
