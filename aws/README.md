@@ -56,14 +56,6 @@ These scripts are uploaded and remotely executed through the AWS Terraform Provi
 
 Additionally, a Guestbook K8s PHP application is deployed  within the `k3s_install.sh` file.
 
-## Deploy Resources
-To deploy your resources, issue the following commands:
-
-```
-terraform init
-terraform apply --auto-approve
-```
-
 ## Access Resources
 The Terraform scripts also generate an output of the public FQDN and IP address. When completed, copy either into your browser. You should be able to successfully access the guestbook web application.
 
