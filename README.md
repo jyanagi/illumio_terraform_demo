@@ -19,6 +19,7 @@ Run the following command to initiate the deployment:
 Modify variables in `shared.tfvars`
 
 ```
+git clone https://github.com/jyanagi/illumio_terraform_demo.git
 chmod +x deploy.sh
 ./deploy.sh
 ```
