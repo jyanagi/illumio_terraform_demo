@@ -75,16 +75,6 @@ Extra-Scope Rule
 
 A **Pairing Profile** is created titled 'TF-K8s Pairing Profile' with a **Container Cluster** titled 'TF-K3s Container Cluster'
 
-----------
-
-There are additional shell script files that can be used:
-
-1. The configure_values.sh file auto-populates the illumio-values.yaml file based on the Terraform outputs and is used to configure Illumio's Kubelink kubernetes operator.
-
-2. The configure_fwcoexist.sh file configures firewall coexistence settings for the application using the Terraform outputs (note: the Terraform scripts uses the TF-k3s, TF-Production, TF-Demo labels; replace these configurations in the main.tf for your own) and provisions all settings
-
-3. The configure_ccwp.sh file configures the Container Cluster Workload Profile (Existing k8s namespace and application is required)
-
 
 
 
