@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Enable Logging - refer to /var/log/user-data.log for k3s installation messages
-exec > /var/log/user-data.log 2>&1
+exec > /var/log/k3s-install.log 2>&1
 set -x
 
 # Disable UFW (Ubuntu)
