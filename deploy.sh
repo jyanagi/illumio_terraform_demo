@@ -4,7 +4,7 @@ set -e  # Exit on any error
 # Deploy and Configure Illumio
 cd illumio
 terraform init
-terraform  apply -auto-approve
+terraform apply -var-file=../shared.tfvars -auto-approve
 chmod +x illumio-script.sh
 ./illumio-script.sh
 
