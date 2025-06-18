@@ -60,7 +60,7 @@ cluster_code: $PCE_PP_KEY # Pairing Profile
 containerRuntime: k3s_containerd # supported values: [containerd (default), docker, crio, k3s_containerd]
 containerManager: kubernetes # supported values: [kubernetes, openshift]
 networkType: overlay  # CNI type, allowed values are [overlay, flat]
-clusterMode: clas
+#clusterMode: clas
 ignore_cert: true
 EOF
 
