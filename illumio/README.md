@@ -2,8 +2,10 @@ This repository uses Terraform and REST API to provision security objects and po
 
 To use the terraform provider, issue the following commands:
 
-`terraform init` <br>
-`terraform apply --auto-approve`
+```
+terraform init
+terraform apply --auto-approve
+```
 ----------
 The Terraform files use [Illumio's Terraform Provider](https://registry.terraform.io/providers/illumio/illumio-core/latest/docs), and configures the following resources:
 
