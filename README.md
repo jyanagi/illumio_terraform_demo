@@ -9,6 +9,7 @@ There are three directories and "steps" to this deployment
 
 ## Requirements: 
 - A Linux shell (if using Windows, you can load WSLv2)
+- SSH Keys generated using `ssh-keygen` command to populate ~/.ssh/ directory
 - Terraform
 - AWS CLI with credentials to AWS environment (ref. README.md in `aws` directory)
 
