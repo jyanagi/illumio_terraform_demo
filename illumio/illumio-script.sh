@@ -67,21 +67,21 @@ ignore_cert: true
 # Remove if this is not a requirement
 # Note: configmap must be created first
 
-extraVolumes:
-  - name: private-ca
-    configMap:
-      name: private-ca
-extraVolumeMounts:
-  - name: private-ca
-    mountPath: /etc/pki/tls/ilo_certs/
-    readOnly: false
+#extraVolumes:
+#  - name: private-ca
+#    configMap:
+#      name: private-ca
+#extraVolumeMounts:
+#  - name: private-ca
+#    mountPath: /etc/pki/tls/ilo_certs/
+#    readOnly: false
 
-storage:
-  registry: "docker.io/bitnami"
-  repo: "etcd"
-  imageTag: "3.5.7"
-  imagePullPolicy: "IfNotPresent"
-  sizeGi: 1
+#storage:
+#  registry: "docker.io/bitnami"
+#  repo: "etcd"
+#  imageTag: "3.5.7"
+#  imagePullPolicy: "IfNotPresent"
+#  sizeGi: 1
 EOF
 
 
